@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<style>
+	body, html {
+    height: 100%;
+    margin: 0;
+}
+
+	/*.bg {*/
+    /* The image used */
+/*    background-image: url("images/bg-1.jpg");
+*/
+    /* Full height */
+    /*height: 100%; */
+
+    /* Center and scale the image nicely */
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+/*    background-size: cover;
+}*/
+		#myContainer{
+			position:relative;
+			background-image: url("images/bg-1.jpg");
+			height:100%;
+			width:100%;
+			flex-wrap: wrap;
+		}
+        #myAnimation {
+
+        	margin-left:0px;
+        	margin-right:0px;
+        	margin-bottom:0px;
+        	margin-top:230px;
+        	position:absolute;
+			background-image: url("images/finandjake.gif");
+/*			background-image:url("images/marcy.gif");
+*/			height:50%;
+			width:50%;
+			background-repeat: no-repeat;
+			transform: scaleX(-1);
+            filter: FlipH;
+            flex-wrap: wrap;
+            /*background-position: 1000px;*/
+	        }
+    #marcy {
+    	background-image: url("images/marcy.gif");
+    	height:75%;
+		width:75%;
+		position:absolute;
+		background-repeat: no-repeat;
+		animation: marcymove 10s infinite;
+    }
+    @keyframes marcymove {
+    0%   {top: 0px;}
+/*added height and width so that it appears that marcy is 'apparating'*/
+    50%  {top: 150px;}
+    75%  {top: 30px;}
+    100% {top: 150px;}
+}
+        button {
+        	background-color:pink;
+        	font-size: 25px;
+        	margin:12px;
+        	color:black;
+        	font-family: 'Indie Flower', cursive;
+
+        }
+        h1{
+        	font-family: 'Indie Flower', cursive;
+        }
+        
+	</style>
+</head>
+<body>
+
+
+<!-- <h1>My first javascript animation</h1> -->
+
+<div id="myContainer"><button onclick="move()">Press Me!</button>
+	<center>
+<h1>It's Adventure Time!!</h1>
+<div id="myAnimation"></div>
+<div id="marcy"></div>
+</div>
+</div>
+<script type="text/javascript">
+function move(){
+	var elem = document.getElementById("myAnimation");
+	var pos= 0;
+	var id = setInterval(frame, 5);
+	function frame() {
+		if (pos == 1200) {
+			clearInterval(id);
+		} 
+		else {
+			pos++;
+			elem.style.left = pos + 'px';
+		}
+
+	}
+}
+
+
+	
+	
+
+
+
+</script>
+</body>
+</html>
